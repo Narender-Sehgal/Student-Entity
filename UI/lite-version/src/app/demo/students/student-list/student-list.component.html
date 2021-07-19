@@ -1,0 +1,47 @@
+<!-- <p>student-list works!</p> -->
+ <div class="row">
+    <div class="col-md-12">
+        <app-card cardTitle="Students List" blockClass="table-border-style">
+          <div class="table-responsive">
+            <hr> 
+            <input class="searchTerm" type="text" name="searchTerm" placeholder="Search"
+            [(ngModel)]="searchValue"/>
+            <hr>
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Fullname</th>
+                <th>Student ID</th>
+                <th>DOB</th>
+                <th>Grade</th>
+                <th>Status</th>
+                <th>Probation</th>
+                <th>Walk Home</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let list of studentList | filter:searchValue | paginate: {itemsPerPage:itemsPerPage, currentPage:pageCount, totalRecords: totalRecords};">
+                <td>{{list.firstName}}</td>
+                <td>{{list.studentId}}</td>
+                <td>{{list.dob | date:'MM-dd-yyyy'}}</td>
+                <td>{{list.currentGrade}}</td>
+                <td class="text-success">{{list.active && 'Active' || ''}}</td>
+                <td class="text-danger">{{list.studentInProbation && 'YES' || ''}}</td>
+                <td class="text-success">{{list.allowedToWalkHome && 'YES' || ''}}</td>
+                <!-- [routerLink]="['/studentform', list.id]" -->
+                <td (click)="transferId(list.id)"><button class="btn btn-warning">View</button></td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="text-left">
+              <pagination-controls (pageChange)="getPage(p = $event)" *ngIf="isShown"></pagination-controls>
+            </div>
+            <div class="text-right">
+              <p>Total results: {{studentList.length}}</p>
+              <button class="btn btn-danger" (click)="disablePaging()">Disable/Enable Pagination</button>
+            </div>
+          </div>
+        </app-card>
+      </div>
+</div>

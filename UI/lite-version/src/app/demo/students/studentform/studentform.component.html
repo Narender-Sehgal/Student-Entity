@@ -1,0 +1,111 @@
+<!-- <p>studentform works!</p> -->
+<div class="row">
+    <div class="col-sm-12">
+      <app-card cardTitle="Student Details" [options]="false">
+        <h5>Student Information</h5>
+        <button (click)="backPage()" class="btn btn-primary">Back</button>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <form action="javascript:">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Student Identification</label>
+                <input readonly type="text" class="form-control" name="studentId" [(ngModel)]="student.studentId"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Student ID">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Current Grade</label>
+                <select readonly class="form-control" name="currentGrade" [(ngModel)]="student.currentGrade" id="exampleFormControlSelect1">
+                  <option>{{student.currentGrade}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Mentor</label>
+                <select readonly class="form-control" name="mentor" [(ngModel)]="student.mentor" id="exampleFormControlSelect1">
+                <option>{{student.mentor}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">School</label>
+                <select readonly class="form-control" name="school" [(ngModel)]="student.school" id="exampleFormControlSelect1">
+                  <option>{{student.school}}</option>
+                 </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">First name</label>
+                <input readonly type="text" class="form-control" name="firstname" [(ngModel)]="student.firstName" id="exampleInputPassword1" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Middle name</label>
+                <input readonly type="text" class="form-control" name="middlename" [(ngModel)]="student.middleName" id="exampleInputPassword1" placeholder="Middle Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Last name</label>
+                <input readonly type="text" class="form-control" name="lastname" [(ngModel)]="student.lastName" id="exampleInputPassword1" placeholder="Last Name">
+              </div>
+              <div class="form-group form-check">
+                <input readonly type="checkbox" class="form-check-input" id="exampleCheck1" name="walkhome" [(ngModel)]="student.allowedToWalkHome">
+                <label class="form-check-label" for="exampleCheck1">Allow to walk home</label>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <form action="javascript:">
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input readonly type="text" class="form-control" name="dob" [(ngModel)]="student.dob" placeholder="DOB">
+              </div>
+              <div class="form-group">
+                <label>Age</label>
+                <input readonly type="text" class="form-control" name="age" [(ngModel)]="student.age" placeholder="Age">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Gender</label>
+                <select readonly class="form-control" name="gender" [(ngModel)]="student.gender"  id="exampleFormControlSelect1">
+                  <option>{{student.gender}}</option>
+                </select>
+              </div>
+              <div class="form-group form-check">
+                <input readonly type="checkbox" name="studentInProbation" [(ngModel)]="student.studentInProbation"  class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Student on Probation</label>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Address</label>
+                <input readonly type="text" class="form-control" name="address" [(ngModel)]="student.address" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">City</label>
+                <input readonly type="text" class="form-control" name="city" [(ngModel)]="student.city" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">State</label>
+                <select readonly class="form-control" name="state" [(ngModel)]="student.state" id="exampleFormControlSelect1">
+                  <option>{{student.state}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Zip Code</label>
+                <input readonly type="text" class="form-control" name="zipcode" [(ngModel)]="student.zipCode" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Zip Code">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Phone</label>
+                <input readonly type="tel" class="form-control" name="phone" [(ngModel)]="student.phone"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input readonly type="email" class="form-control" name="email" [(ngModel)]="student.email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <div class="form-group form-check">
+                <input readonly type="checkbox" name="iep" [(ngModel)]="student.iep" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">IEP</label>
+              </div>
+              <div class="form-group form-check">
+                <input readonly type="checkbox" name="field504" [(ngModel)]="student.field504" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">504</label>
+              </div>
+              <div class="form-group form-check">
+                <input readonly type="checkbox" name="Retained" [(ngModel)]="student.reteined" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Retained</label>
+              </div>
+            </form>
+          </div>
+        </div>
